@@ -1,0 +1,21 @@
+#pagina 404,403 personalizado
+ErrorDocument 404 /turaguas/vistas/404.php
+ErrorDocument 403 /turaguas/vistas/403.php
+
+#impedir listado de los dirrectorio
+Options -Indexes
+
+#UTF-8
+<FilesMatch "\.(htm|html|css|js)$">
+AddDefaultCharset UTF-8
+</FilesMatch>
+
+#Orden de ejecución de archivos
+DirectoryIndex index.php index.html menu_principal.php
+
+#para proteger el archivo .htaccess
+# asegurar htaccess
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>

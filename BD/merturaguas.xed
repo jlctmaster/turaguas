@@ -1,0 +1,1298 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Diagram version="1.0" type="POSTGRES" versionMajor="9" versionMinor="2">
+   <Table id="0" name="talmacen" schema="inventario" database="bdturaguas">
+      <Column id="1" name="nid_almacen" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('inventario.seq_almacen'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="2" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="3" name="ncantidad_min" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="4" name="ncantidad_max" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="5" name="nid_ubicacion" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="6" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="7" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="8" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="9" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="10" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="11" name="tarticulo" schema="inventario" database="bdturaguas">
+      <Column id="12" name="cid_articulo" type="char" length="15" nulls="false"/>
+      <Column id="13" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="14" name="nid_tipoarticulo" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="15" name="nid_presentacion" type="numeric" length="0" nulls="true">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="16" name="nid_categoria" type="numeric" length="0" nulls="true">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="17" name="nid_unidadmedida" type="numeric" length="0" nulls="true">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="18" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="19" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="20" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="21" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="22" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="23" name="tbitacora" schema="seguridad" database="bdturaguas">
+      <Column id="24" name="nid_bitacora" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('seguridad.seq_bitacora'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="25" name="cip" type="varchar" length="15" nulls="false"/>
+      <Column id="26" name="cso" type="varchar" length="50" nulls="false"/>
+      <Column id="27" name="cnavigador" type="varchar" length="35" nulls="false"/>
+      <Column id="28" name="cusuario_base_de_datos" type="varchar" length="60" nulls="false"/>
+      <Column id="29" name="cusuario_aplicacion" type="char" length="15" nulls="false"/>
+      <Column id="30" name="cquery" type="text" length="0" nulls="false"/>
+      <Column id="31" name="dfecha" type="timestamp" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+   </Table>
+   <Table id="32" name="tcategoria" schema="inventario" database="bdturaguas">
+      <Column id="33" name="nid_categoria" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('inventario.seq_categoria'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="34" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="35" name="cacumulado" type="char" length="1" nulls="true">
+         <CP name="DEFAULT_VALUE">'N'::bpchar</CP>
+      </Column>
+      <Column id="36" name="nid_categoria_padre" type="numeric" length="0" nulls="true">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="37" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="38" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="39" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="40" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="41" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="42" name="tcondicion_pago" schema="facturacion" database="bdturaguas">
+      <Column id="43" name="nid_condicionpago" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('facturacion.seq_condicion_pago'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="44" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="45" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="46" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="47" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="48" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="49" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="50" name="tcontrasena" schema="seguridad" database="bdturaguas">
+      <Column id="51" name="cnombreusuario" type="char" length="15" nulls="false"/>
+      <Column id="52" name="ccontrasena" type="varchar" length="255" nulls="false"/>
+      <Column id="53" name="nestado" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">3</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="54" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="55" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="56" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="57" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="58" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="59" name="tdetalle_documento" schema="facturacion" database="bdturaguas">
+      <Column id="60" name="nid_documento" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="61" name="cid_articulo" type="char" length="15" nulls="false"/>
+      <Column id="62" name="ncantidad_articulo" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">0</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="63" name="nid_impuesto" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="64" name="nprecio" type="numeric" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">0</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="65" name="npreciolista" type="numeric" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">0</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="66" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="67" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="68" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="69" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="70" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="71" name="tdetalle_lista_precio" schema="facturacion" database="bdturaguas">
+      <Column id="72" name="nid_listaprecio" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="73" name="cid_articulo" type="char" length="15" nulls="false"/>
+      <Column id="74" name="nprecio" type="numeric" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">0</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="75" name="nprecio_max" type="numeric" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">0</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="76" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="77" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="78" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="79" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="80" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="81" name="tdetalle_movimiento_inventario" schema="inventario" database="bdturaguas">
+      <Column id="82" name="nid_movinventario" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="83" name="cid_articulo" type="char" length="15" nulls="false"/>
+      <Column id="84" name="nid_almacen" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="85" name="ncantidad" type="numeric" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">0</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="86" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="87" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="88" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="89" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="90" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="91" name="tdetalleservicio_perfil_opcion" schema="public" database="bdturaguas">
+      <Column id="92" name="nid_opcion" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="93" name="nid_servicio" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="94" name="nid_perfil" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="95" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="96" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="97" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="98" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="99" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="100" name="tdocumento" schema="facturacion" database="bdturaguas">
+      <Column id="101" name="nid_documento" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('facturacion.seq_documento'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="102" name="ctipo_transaccion" type="char" length="1" nulls="false">
+         <CP name="DEFAULT_VALUE">'V'::bpchar</CP>
+      </Column>
+      <Column id="103" name="nnro_orden" type="numeric" length="0" nulls="true">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="104" name="nnro_factura" type="numeric" length="0" nulls="true">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="105" name="nnro_control" type="numeric" length="0" nulls="true">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="106" name="dfecha_documento" type="timestamp" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="107" name="nnro_ent_recib" type="numeric" length="0" nulls="true">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="108" name="dfecha_ent_recib" type="timestamp" length="0" nulls="true"/>
+      <Column id="109" name="cestado_documento" type="char" length="2" nulls="false">
+         <CP name="DEFAULT_VALUE">'DR'::bpchar</CP>
+      </Column>
+      <Column id="110" name="nmonto_total" type="numeric" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">0</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="111" name="nid_condicionpago" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="112" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="113" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="114" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="115" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="116" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="117" name="timpuesto" schema="facturacion" database="bdturaguas">
+      <Column id="118" name="nid_impuesto" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('facturacion.seq_impuesto'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="119" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="120" name="nporcentaje" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="121" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="122" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="123" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="124" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="125" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="126" name="tlista_precio" schema="facturacion" database="bdturaguas">
+      <Column id="127" name="nid_listaprecio" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('facturacion.seq_lista_precio'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="128" name="ctipo_listaprecio" type="char" length="1" nulls="false"/>
+      <Column id="129" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="130" name="dvigencia_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="131" name="dvigencia_hasta" type="timestamp" length="0" nulls="true"/>
+      <Column id="132" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="133" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="134" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="135" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="136" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="137" name="tlocalidad" schema="general" database="bdturaguas">
+      <Column id="138" name="nid_localidad" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('general.seq_localidad'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="139" name="ctabla" type="varchar" length="255" nulls="false"/>
+      <Column id="140" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="141" name="nid_localidad_padre" type="numeric" length="0" nulls="true">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="142" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="143" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="144" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="145" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="146" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="147" name="tmodulo" schema="seguridad" database="bdturaguas">
+      <Column id="148" name="nid_modulo" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('seguridad.seq_modulo'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="149" name="cnombremodulo" type="varchar" length="70" nulls="false"/>
+      <Column id="150" name="cicono" type="varchar" length="200" nulls="false">
+         <CP name="DEFAULT_VALUE">'icon-list-alt'::character varying</CP>
+      </Column>
+      <Column id="151" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="152" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="153" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="154" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="155" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="156" name="tmovimiento_inventario" schema="inventario" database="bdturaguas">
+      <Column id="157" name="nid_movinventario" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('inventario.seq_mov_inventario'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="158" name="nid_documento" type="numeric" length="0" nulls="true">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="159" name="dfecha_movinventario" type="timestamp" length="0" nulls="true"/>
+      <Column id="160" name="ctipo_movinventario" type="char" length="1" nulls="false">
+         <CP name="DEFAULT_VALUE">'E'::bpchar</CP>
+      </Column>
+      <Column id="161" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="162" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="163" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="164" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="165" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="166" name="topcion" schema="seguridad" database="bdturaguas">
+      <Column id="167" name="nid_opcion" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('seguridad.seq_opcion'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="168" name="cnombreopcion" type="varchar" length="45" nulls="false"/>
+      <Column id="169" name="norden" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="170" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="171" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="172" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="173" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="174" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="175" name="tperfil" schema="seguridad" database="bdturaguas">
+      <Column id="176" name="nid_perfil" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('seguridad.seq_perfil'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="177" name="cnombreperfil" type="varchar" length="45" nulls="false"/>
+      <Column id="178" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="179" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="180" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="181" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="182" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="183" name="tpersona" schema="general" database="bdturaguas">
+      <Column id="184" name="crif_persona" type="char" length="10" nulls="false"/>
+      <Column id="185" name="cnombre" type="varchar" length="255" nulls="false"/>
+      <Column id="186" name="cdireccion" type="varchar" length="255" nulls="false"/>
+      <Column id="187" name="ctelefhab" type="char" length="11" nulls="true"/>
+      <Column id="188" name="ctelefmov" type="char" length="11" nulls="true"/>
+      <Column id="189" name="cemail" type="varchar" length="60" nulls="true"/>
+      <Column id="190" name="nid_localidad" type="numeric" length="0" nulls="true">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="191" name="nid_rol" type="numeric" length="25" nulls="true">
+         <CP name="PRECISION">15</CP>
+         <CP name="SCALE">5</CP>
+      </Column>
+      <Column id="192" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="193" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="194" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="195" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="196" name="cmodificado_por" type="char" length="15" nulls="true"/>
+      <Storage name="TempTable" value="false"></Storage>
+   </Table>
+   <Table id="197" name="tpregunta_secreta" schema="seguridad" database="bdturaguas">
+      <Column id="198" name="nid_pregunta" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('seguridad.seq_preguntasecreta'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="199" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="200" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="201" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="202" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="203" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="204" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="205" name="tpresentacion" schema="inventario" database="bdturaguas">
+      <Column id="206" name="nid_presentacion" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('inventario.seq_presentacion'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="207" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="208" name="csimbolo" type="char" length="10" nulls="false"/>
+      <Column id="209" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="210" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="211" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="212" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="213" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="214" name="trespuesta_secreta" schema="seguridad" database="bdturaguas">
+      <Column id="215" name="nid_pregunta" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="216" name="cnombreusuario" type="char" length="15" nulls="false"/>
+      <Column id="217" name="crespuesta" type="varchar" length="255" nulls="false"/>
+      <Column id="218" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="219" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="220" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="221" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="222" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="223" name="tservicio" schema="seguridad" database="bdturaguas">
+      <Column id="224" name="nid_servicio" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('seguridad.seq_servicio'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="225" name="cnombreservicio" type="varchar" length="45" nulls="false"/>
+      <Column id="226" name="nid_modulo" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="227" name="curl" type="varchar" length="200" nulls="true">
+         <CP name="DEFAULT_VALUE">NULL::character varying</CP>
+      </Column>
+      <Column id="228" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="229" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="230" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="231" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="232" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="233" name="ttipo_articulo" schema="inventario" database="bdturaguas">
+      <Column id="234" name="nid_tipoarticulo" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('inventario.seq_tipo_articulo'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="235" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="236" name="ccontrolporinventario" type="char" length="1" nulls="false">
+         <CP name="DEFAULT_VALUE">'Y'::bpchar</CP>
+      </Column>
+      <Column id="237" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="238" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="239" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="240" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="241" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="242" name="ttipo_documento" schema="facturacion" database="bdturaguas">
+      <Column id="243" name="nid_tipodocumento" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('facturacion.seq_tipo_documento'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="244" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="245" name="nfactor" type="numeric" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">1</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="246" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="247" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="248" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="249" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="250" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="251" name="ttipo_persona" schema="general" database="bdturaguas">
+      <Column id="252" name="nid_tipopersona" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('general.seq_tipo_persona'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="253" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="254" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="255" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="256" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="257" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="258" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="259" name="ttransaccion_documento" schema="facturacion" database="bdturaguas">
+      <Column id="260" name="nid_documento" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="261" name="nid_tipodocumento" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="262" name="nid_tipopersona" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="263" name="crif_persona" type="char" length="10" nulls="false"/>
+      <Column id="264" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="265" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="266" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="267" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="268" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="269" name="tubicacion" schema="inventario" database="bdturaguas">
+      <Column id="270" name="nid_ubicacion" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('inventario.seq_ubicacion'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="271" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="272" name="ccoor_norte" type="varchar" length="255" nulls="false"/>
+      <Column id="273" name="ccoor_sur" type="varchar" length="255" nulls="false"/>
+      <Column id="274" name="ccoor_este" type="varchar" length="255" nulls="false"/>
+      <Column id="275" name="ccoor_oeste" type="varchar" length="255" nulls="false"/>
+      <Column id="276" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="277" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="278" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="279" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="280" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="281" name="tum_conversion" schema="inventario" database="bdturaguas">
+      <Column id="282" name="nid_um_conversion" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('inventario.seq_um_conversion'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="283" name="cid_articulo" type="char" length="15" nulls="false"/>
+      <Column id="284" name="nid_um_desde" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="285" name="nid_um_hasta" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="286" name="nfactor_multiplicador" type="numeric" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">0</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="287" name="nfactor_divisor" type="numeric" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">0</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="288" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="289" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="290" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="291" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="292" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="293" name="tunidad_medida" schema="inventario" database="bdturaguas">
+      <Column id="294" name="nid_unidadmedida" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('inventario.seq_um'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="295" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="296" name="csimbolo" type="char" length="5" nulls="false"/>
+      <Column id="297" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="298" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="299" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="300" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="301" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="302" name="tusuario" schema="seguridad" database="bdturaguas">
+      <Column id="303" name="cnombreusuario" type="char" length="15" nulls="false"/>
+      <Column id="304" name="ccedula" type="char" length="10" nulls="false"/>
+      <Column id="305" name="nid_perfil" type="numeric" length="0" nulls="false">
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="306" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="307" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="308" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="309" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="310" name="cmodificado_por" type="char" length="15" nulls="true"/>
+   </Table>
+   <Table id="311" name="trol" schema="general" database="bdturaguas">
+      <Column id="312" name="nid_rol" type="numeric" length="0" nulls="false">
+         <CP name="DEFAULT_VALUE">nextval('general.seq_rol'::regclass)</CP>
+         <CP name="PRECISION">0</CP>
+         <CP name="SCALE">0</CP>
+      </Column>
+      <Column id="313" name="cdescripcion" type="varchar" length="255" nulls="false"/>
+      <Column id="314" name="dfecha_desactivacion" type="timestamp" length="0" nulls="true"/>
+      <Column id="315" name="dcreado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="316" name="ccreado_por" type="char" length="15" nulls="true"/>
+      <Column id="317" name="dmodificado_desde" type="timestamp" length="0" nulls="true">
+         <CP name="DEFAULT_VALUE">now()</CP>
+      </Column>
+      <Column id="318" name="cmodificado_por" type="char" length="15" nulls="true"/>
+      <Storage name="TempTable" value="false"></Storage>
+   </Table>
+   <Relation id="319" name="fk_almacen_ubicacion" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>270</FK>
+      <PK>5</PK>
+   </Relation>
+   <Relation id="320" name="fk_articulo_um" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>294</FK>
+      <PK>17</PK>
+   </Relation>
+   <Relation id="321" name="fk_articulo_tipoarticulo" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>234</FK>
+      <PK>14</PK>
+   </Relation>
+   <Relation id="322" name="fk_articulo_presentacion" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>206</FK>
+      <PK>15</PK>
+   </Relation>
+   <Relation id="323" name="fk_articulo_categoria" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>33</FK>
+      <PK>16</PK>
+   </Relation>
+   <Relation id="324" name="fk_contrasena_usuario" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>303</FK>
+      <PK>51</PK>
+   </Relation>
+   <Relation id="325" name="fk_detalledocumento_impuesto" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>118</FK>
+      <PK>63</PK>
+   </Relation>
+   <Relation id="326" name="fk_detalledocumento_documento" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>101</FK>
+      <PK>60</PK>
+   </Relation>
+   <Relation id="327" name="fk_detalledocumento_articulo" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>12</FK>
+      <PK>61</PK>
+   </Relation>
+   <Relation id="328" name="fk_detalleprecio_listaprecio" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>127</FK>
+      <PK>72</PK>
+   </Relation>
+   <Relation id="329" name="fk_detalleprecio_articulo" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>12</FK>
+      <PK>73</PK>
+   </Relation>
+   <Relation id="330" name="fk_detallemovinv_movinventario" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>157</FK>
+      <PK>82</PK>
+   </Relation>
+   <Relation id="331" name="fk_detallemovinv_articulo" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>12</FK>
+      <PK>83</PK>
+   </Relation>
+   <Relation id="332" name="fk_detallemovinv_almacen" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>1</FK>
+      <PK>84</PK>
+   </Relation>
+   <Relation id="333" name="fk_servicio" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>224</FK>
+      <PK>93</PK>
+   </Relation>
+   <Relation id="334" name="fk_perfil" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>176</FK>
+      <PK>94</PK>
+   </Relation>
+   <Relation id="335" name="fk_opcion" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>167</FK>
+      <PK>92</PK>
+   </Relation>
+   <Relation id="336" name="fk_documento_condicionpago" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>43</FK>
+      <PK>111</PK>
+   </Relation>
+   <Relation id="337" name="fk_movinventario_documento" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>101</FK>
+      <PK>158</PK>
+   </Relation>
+   <Relation id="338" name="fk_persona_localidad" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>138</FK>
+      <PK>190</PK>
+   </Relation>
+   <Relation id="339" name="fk_respuesta_usuario" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>303</FK>
+      <PK>216</PK>
+   </Relation>
+   <Relation id="340" name="fk_respuesta_pregunta" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>198</FK>
+      <PK>215</PK>
+   </Relation>
+   <Relation id="341" name="fk_servicio_modulo" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>148</FK>
+      <PK>226</PK>
+   </Relation>
+   <Relation id="342" name="fk_transacciondoc_tipopersona" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>252</FK>
+      <PK>262</PK>
+   </Relation>
+   <Relation id="343" name="fk_transacciondoc_tipodocumento" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>243</FK>
+      <PK>261</PK>
+   </Relation>
+   <Relation id="344" name="fk_transacciondoc_persona" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>184</FK>
+      <PK>263</PK>
+   </Relation>
+   <Relation id="345" name="fk_transacciondoc_documento" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>101</FK>
+      <PK>260</PK>
+   </Relation>
+   <Relation id="346" name="fk_conversion_umhasta" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>294</FK>
+      <PK>285</PK>
+   </Relation>
+   <Relation id="347" name="fk_conversion_umdesde" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>294</FK>
+      <PK>284</PK>
+   </Relation>
+   <Relation id="348" name="fk_conversion_articulo" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>12</FK>
+      <PK>283</PK>
+   </Relation>
+   <Relation id="349" name="fk_usuario_perfil" cardinality="-2" identifying="false" nulls="false">
+      <Option name="initially" class="String" value="IMMEDIATE"></Option>
+      <Option name="deferrable" class="Boolean" value="false"></Option>
+      <Option name="match" class="String" value="SIMPLE"></Option>
+      <Option name="onDelete" class="String" value="RESTRICT"></Option>
+      <Option name="onUpdate" class="String" value="CASCADE"></Option>
+      <FK>176</FK>
+      <PK>305</PK>
+   </Relation>
+   <Relation id="350" name="fk_persona_rol" cardinality="-2" identifying="false" nulls="false">
+      <FK>191</FK>
+      <PK>312</PK>
+      <Text></Text>
+   </Relation>
+   <Index table="0" name="pk_almacen" schema="inventario" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="1" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="11" name="pk_articulo" schema="inventario" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="12" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="23" name="pk_bitacora" schema="seguridad" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="24" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="32" name="pk_categoria" schema="inventario" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="33" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="42" name="pḱ_condicion_pago" schema="facturacion" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="43" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="100" name="pk_documento" schema="facturacion" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="101" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="117" name="pk_impuesto" schema="facturacion" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="118" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="126" name="pk_lista_precio" schema="facturacion" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="127" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="137" name="pk_localidad" schema="general" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="138" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="147" name="pk_modulo" schema="seguridad" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="148" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="156" name="pk_movinventario" schema="inventario" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="157" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="166" name="pk_opcion" schema="seguridad" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="167" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="175" name="pk_perfil" schema="seguridad" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="176" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="183" name="pk_persona" schema="general" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="184" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="197" name="pk_pregunta_secreta" schema="seguridad" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="198" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="205" name="pk_presentacion" schema="inventario" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="206" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="214" name="pk_respuesta_pregunta_usuario" schema="seguridad" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="215" sequence="0" ascending="true"></IndexColumn>
+      <IndexColumn id="216" sequence="1" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="223" name="pk_servicio" schema="seguridad" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="224" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="233" name="pk_tipo_articulo" schema="inventario" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="234" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="242" name="pk_tipo_documento" schema="facturacion" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="243" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="251" name="pk_tipo_persona" schema="general" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="252" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="269" name="pk_ubicacion" schema="inventario" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="270" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="281" name="pk_um_conversion" schema="inventario" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="282" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="293" name="pk_unidad_medida" schema="inventario" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="294" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="302" name="pk_usuario" schema="seguridad" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="303" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Index table="311" name="pk_tipo_persona_1" schema="general" database="bdturaguas">
+      <Option name="unique" class="Boolean" value="true"></Option>
+      <IndexColumn id="312" sequence="0" ascending="true"></IndexColumn>
+   </Index>
+   <Constraint table="0" name="pk_almacen" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="1"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="11" name="pk_articulo" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="12"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="23" name="pk_bitacora" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="24"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="32" name="pk_categoria" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="33"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="42" name="pḱ_condicion_pago" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="43"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="100" name="pk_documento" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="101"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="117" name="pk_impuesto" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="118"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="126" name="pk_lista_precio" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="127"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="137" name="pk_localidad" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="138"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="147" name="pk_modulo" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="148"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="156" name="pk_movinventario" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="157"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="166" name="pk_opcion" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="167"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="175" name="pk_perfil" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="176"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="183" name="pk_persona" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="184"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="197" name="pk_pregunta_secreta" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="198"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="205" name="pk_presentacion" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="206"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="214" name="pk_respuesta_pregunta_usuario" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="216"></ConstraintColumn>
+      <ConstraintColumn id="215"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="223" name="pk_servicio" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="224"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="233" name="pk_tipo_articulo" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="234"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="242" name="pk_tipo_documento" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="243"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="251" name="pk_tipo_persona" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="252"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="269" name="pk_ubicacion" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="270"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="281" name="pk_um_conversion" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="282"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="293" name="pk_unidad_medida" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="294"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="302" name="pk_usuario" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="303"></ConstraintColumn>
+   </Constraint>
+   <Constraint table="311" name="pk_tipo_persona_1" type="PrimKey">
+      <Option name="tablespace" class="String" value="&lt;PREDETERMINADO>"></Option>
+      <ConstraintColumn id="312"></ConstraintColumn>
+   </Constraint>
+   <Sheet name="BDTuragas" id="351" disp_at="true" disp_ph="true" disp_co="true" disp_rn="true">
+      <Place id="326" visible="true" options="809.0,698.0,250.0,300.0,431.0,914.0,250.0,210.0,4,809.0,780.0,730.0,780.0,730.0,1070.0,681.0,1070.0">796,-59,0,2</Place>
+      <Place id="0" visible="true">1164,1657,250,190</Place>
+      <Place id="336" visible="true">500,0,0,0</Place>
+      <Place id="156" visible="true">722,1218,250,180</Place>
+      <Place id="197" visible="true">32,472,250,140</Place>
+      <Place id="59" visible="true">431,914,250,210</Place>
+      <Place id="349" visible="true" options="832.0,259.0,250.0,140.0,426.0,224.0,250.0,160.0,2,832.0,320.0,676.0,320.0">525,9,0,0</Place>
+      <Place id="81" visible="true">731,1497,250,180</Place>
+      <Place id="242" visible="true">1080,493,250,160</Place>
+      <Place id="325" visible="true">500,0,0,0</Place>
+      <Place id="335" visible="true" options="1181.0,34.0,250.0,160.0,811.0,24.0,250.0,160.0,2,1181.0,100.0,1061.0,100.0">541,10,0,0</Place>
+      <Place id="11" visible="true">428,1318,250,210</Place>
+      <Place id="269" visible="true">730,1704,250,210</Place>
+      <Place id="293" visible="true">30,1752,250,160</Place>
+      <Place id="344" visible="true" options="1333.0,1077.0,250.0,244.0,1001.0,1206.0,250.0,180.0,3,1333.0,1190.0,1230.0,1190.0,1230.0,1206.0">573,15,-4,0</Place>
+      <Place id="319" visible="true" options="730.0,1704.0,250.0,210.0,1164.0,1657.0,250.0,190.0,2,980.0,1810.0,1164.0,1810.0">543,-11,0,0</Place>
+      <Place id="345" visible="true" options="809.0,698.0,250.0,300.0,1001.0,1206.0,250.0,180.0,4,990.0,998.0,990.0,1100.0,1040.0,1100.0,1040.0,1206.0">166,-17,1,0</Place>
+      <Place id="340" visible="true" options="32.0,472.0,250.0,140.0,38.0,242.0,250.0,160.0,2,140.0,472.0,140.0,402.0">457,-14,0,0</Place>
+      <Place id="166" visible="true">1181,34,250,160</Place>
+      <Place id="327" visible="true" options="428.0,1318.0,250.0,210.0,431.0,914.0,250.0,210.0,4,490.0,1318.0,490.0,1220.0,530.0,1220.0,530.0,1124.0">867,-42,0,0</Place>
+      <Place id="311" visible="true">1300,840,250,140</Place>
+      <Place id="50" visible="true">360,460,250,160</Place>
+      <Place id="281" visible="true">450,1678,250,210</Place>
+      <Place id="331" visible="true" options="428.0,1318.0,250.0,210.0,731.0,1497.0,250.0,180.0,5,678.0,1460.0,700.0,1460.0,700.0,1480.0,760.0,1480.0,760.0,1497.0">857,-9,-7,-9</Place>
+      <Place id="337" visible="true">800,16,0,0</Place>
+      <Place id="259" visible="true">1001,1206,250,180</Place>
+      <Place id="32" visible="true">41,1319,250,180</Place>
+      <Place id="117" visible="true">423,675,250,160</Place>
+      <Place id="330" visible="true" options="722.0,1218.0,250.0,180.0,731.0,1497.0,250.0,180.0,2,900.0,1398.0,900.0,1497.0">373,9,0,0</Place>
+      <Place id="302" visible="true">426,224,250,160</Place>
+      <Place id="347" visible="true" options="30.0,1752.0,250.0,160.0,450.0,1678.0,250.0,210.0,2,280.0,1850.0,450.0,1850.0">505,-12,0,0</Place>
+      <Place id="342" visible="true" options="1232.0,687.0,250.0,140.0,1001.0,1206.0,250.0,180.0,4,1270.0,826.0,1270.0,1020.0,1159.0,1020.0,1159.0,1206.0">539,19,0,0</Place>
+      <Place id="175" visible="true">832,259,250,140</Place>
+      <Place id="183" visible="true">1333,1077,250,244</Place>
+      <Place id="334" visible="true" options="832.0,259.0,250.0,140.0,811.0,24.0,250.0,160.0,4,910.0,259.0,910.0,220.0,980.0,220.0,980.0,184.0">455,-13,0,0</Place>
+      <Place id="350" visible="true">500,0,0,0</Place>
+      <Place id="42" visible="true">778,494,250,140</Place>
+      <Place id="71" visible="true">41,918,250,180</Place>
+      <Place id="333" visible="true" options="421.0,14.0,250.0,180.0,811.0,24.0,250.0,160.0,2,671.0,90.0,811.0,90.0">464,-10,0,0</Place>
+      <Place id="328" visible="true" options="39.0,666.0,250.0,190.0,41.0,918.0,250.0,180.0,2,130.0,856.0,130.0,918.0">500,17,0,0</Place>
+      <Place id="329" visible="true" options="428.0,1318.0,250.0,210.0,41.0,918.0,250.0,180.0,5,450.0,1318.0,450.0,1210.0,320.0,1210.0,320.0,1080.0,291.0,1080.0">445,32,0,0</Place>
+      <Place id="339" visible="true" options="426.0,224.0,250.0,160.0,38.0,242.0,250.0,160.0,2,426.0,350.0,288.0,350.0">492,15,0,0</Place>
+      <Place id="341" visible="true" options="31.0,24.0,250.0,160.0,421.0,14.0,250.0,180.0,2,281.0,130.0,421.0,130.0">492,-12,0,0</Place>
+      <Place id="320" visible="true" options="30.0,1752.0,250.0,160.0,428.0,1318.0,250.0,210.0,6,240.0,1752.0,240.0,1710.0,380.0,1710.0,380.0,1640.0,460.0,1640.0,460.0,1528.0">301,-12,0,0</Place>
+      <Place id="214" visible="true">38,242,250,160</Place>
+      <Place id="23" visible="true">1169,236,280,160</Place>
+      <Place id="343" visible="true" options="1080.0,493.0,250.0,160.0,1001.0,1206.0,250.0,180.0,4,1190.0,653.0,1190.0,930.0,1120.0,930.0,1120.0,1206.0">424,3,0,0</Place>
+      <Place id="348" visible="true">421,-7,-1,0</Place>
+      <Place id="324" visible="true">500,0,0,0</Place>
+      <Place id="323" visible="true" options="41.0,1319.0,250.0,180.0,428.0,1318.0,250.0,210.0,2,291.0,1440.0,428.0,1440.0">503,-11,0,0</Place>
+      <Place id="251" visible="true">1232,687,250,140</Place>
+      <Place id="233" visible="true">41,1138,250,160</Place>
+      <Place id="100" visible="true">809,698,250,300</Place>
+      <Place id="332" visible="true" options="1164.0,1657.0,250.0,190.0,731.0,1497.0,250.0,180.0,4,1164.0,1690.0,1070.0,1690.0,1070.0,1650.0,981.0,1650.0">466,-2,0,0</Place>
+      <Place id="126" visible="true">39,666,250,190</Place>
+      <Place id="223" visible="true">421,14,250,180</Place>
+      <Place id="346" visible="true" options="30.0,1752.0,250.0,160.0,450.0,1678.0,250.0,210.0,4,280.0,1800.0,393.0,1800.0,393.0,1800.0,450.0,1800.0">484,-12,0,0</Place>
+      <Place id="338" visible="true" options="1002.0,1417.0,250.0,180.0,1333.0,1077.0,250.0,244.0,3,1252.0,1470.0,1460.0,1470.0,1460.0,1321.0">307,-16,0,0</Place>
+      <Place id="91" visible="true">811,24,250,160</Place>
+      <Place id="147" visible="true">31,24,250,160</Place>
+      <Place id="137" visible="true">1002,1417,250,180</Place>
+      <Place id="322" visible="true" options="41.0,1519.0,250.0,160.0,428.0,1318.0,250.0,210.0,4,291.0,1550.0,360.0,1550.0,360.0,1500.0,428.0,1500.0">433,10,0,0</Place>
+      <Place id="321" visible="true" options="41.0,1138.0,250.0,160.0,428.0,1318.0,250.0,210.0,4,291.0,1290.0,360.0,1290.0,360.0,1360.0,428.0,1360.0">444,-2,0,0</Place>
+      <Place id="205" visible="true">41,1519,250,160</Place>
+   </Sheet>
+   <Settings sheet="351" zoom="0.8408964152537155"></Settings>
+</Diagram>
